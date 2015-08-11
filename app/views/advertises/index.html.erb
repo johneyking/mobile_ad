@@ -1,0 +1,19 @@
+<%= link_to 'New Advertise', :controller => 'advertises', :action => 'new' %>
+<%= form_for @advertise, :url => { :controller => 'advertises', :action => 'create' } do |f| %>
+
+    <%= f.label :name, "Title" %>
+    <%= f.text_field :title %>
+
+     <%= f.label :name, "Content" %>  
+     <%= f.text_area :content %>
+     <%= f.label :name, "start_date_time" %>
+    <%= f.text_field :start_date_time %>
+    <%= f.label :name, ":end_date_time" %>
+    <%= f.text_field :end_date_time %>
+    <%= f.label :name, ":location" %>
+    <%= f.text_field :location %>
+   
+    <% f.label :max_number, "20" %>
+
+    <%= f.submit "Create" %>
+<% end %>
