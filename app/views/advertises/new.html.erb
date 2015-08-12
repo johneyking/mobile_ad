@@ -1,18 +1,21 @@
+
 <%= form_for @advertise, :url => { :controller => 'advertises', :action => 'create' } do |f| %>
+     <table >
+        <tr>
+    <td><%= f.label :name, "Title" %></td>
+   <td> <%= f.text_field :title %></td></tr>
+    <td> <%= f.label :name, "Content" %>  </td>
+     <td><%= f.text_area :content %> </td>
+    <td> <%= f.label :name, "start_date_time" %> </td>
+    <td><%= f.text_field :start_date_time %> </td>
+ <td>   <%= f.label :name, ":end_date_time" %> </td>
+   <td> <%= f.text_field :end_date_time %> </td>
+    <td><%= f.label :name, ":location" %> </td>
+    <td><%= f.select :location, options_for_select(['home', 'taipei']) %> </td>
+    <td><%= f.label :name, "Maxnumber" %> </td>
+   
+    </tr>
 
-    <%= f.label :name, "Title" %>
-    <%= f.text_field :title %>
-
-     <%= f.label :name, "Content" %>  
-     <%= f.text_area :content %>
-     <%= f.label :name, "start_date_time" %>
-    <%= f.text_field :start_date_time %>
-    <%= f.label :name, ":end_date_time" %>
-    <%= f.text_field :end_date_time %>
-    <%= f.label :name, ":location" %>
-    <%= f.text_field :location %>
-     <%= f.label :name, ":max_number" %>
-    <%= f.text_field :max_number %>
-    <% f.label :name, "2" :advertiser_id %>
     <%= f.submit "Create" %>
+    </table>
 <% end %>

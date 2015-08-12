@@ -1,0 +1,8 @@
+
+  <ul class="nav nav-pills nav-stacked pull-left container-fluid">
+  <% if advertiser_signed_in? %>  
+    <li class="active"><%= link_to "Po廣告", :controller => '/advertises', :action => 'new' %></li><br>
+    <li class="active"><%= link_to "廣告成效",:controller =>'/advertises', :action => 'index' %></li><br>
+    <li class="active"><a href="/main/profile">基本資料</a></li>
+    <% end %>
+  </ul>

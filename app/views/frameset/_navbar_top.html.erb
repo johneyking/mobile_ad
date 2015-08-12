@@ -1,0 +1,37 @@
+<nav class="navbar-form navbar-inverse " role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/main/index">首頁</a>  
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a class="navbar-brand" href="/main/test">什麼是行動廣告</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li ><a class="navbar-brand" href="#">最新訊息</a></li>
+        </ul>
+      <ul class="nav navbar-nav">
+        <li ><a class="navbar-brand" href="#">成功案例</a></li>
+        </ul>
+      <ul class="nav navbar-nav">
+        <li ><a class="navbar-brand" href="#">聯絡我們</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if advertiser_signed_in? %>  
+      <li><%= link_to 'Edit profile', edit_advertiser_registration_path, :class => 'navbar-link' %> |</li>
+      <li><%= link_to "Logout", destroy_advertiser_session_path, method: :delete, :class => 'navbar-link'  %></li>
+  <% else %>
+      <li><%= link_to "Sign up", new_advertiser_registration_path, :class => 'navbar-link'  %> |</li>
+      <li><%= link_to "Login", new_advertiser_session_path, :class => 'navbar-link'  %></li>
+  <% end %>
+      </ul>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+  </div><!-- /.container-fluid -->
+</nav>

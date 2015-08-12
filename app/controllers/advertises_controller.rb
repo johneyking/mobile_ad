@@ -1,7 +1,7 @@
 class AdvertisesController < ApplicationController
 before_action :authenticate_advertiser!  
 	def index
-		@advertise = Advertise.new
+		@advertise = Advertise.where(:advertiser_id => current_advertiser.id)
 	end
        def new
               @advertise = Advertise.new
@@ -13,6 +13,11 @@ before_action :authenticate_advertiser!
              @advertise.save
 
              redirect_to :action => :index
+      end
+      def show
+            @advertise = Advertise.find(params[:id])
+      end
+      def edit
       end
 
 private

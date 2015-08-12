@@ -2,49 +2,58 @@
 <html>
 <head>
   <title>MobileAd</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+#hh { 
+  padding-left:300px; 
+  padding-right:200px; 
+  border: 1px solid 000000; 
+}
+#gg { 
+  font-size: 22px;
+  padding-top:80px; 
+  padding-left:50px; 
+  border: 1px solid 000000; 
+}
+
+</style>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">The Idea app</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <p class="navbar-text pull-right">O
- 	<% if advertiser_signed_in? %>  
-  		<%= link_to 'Edit profile', edit_advertiser_registration_path, :class => 'navbar-link' %> |
-  		<%= link_to "Logout", destroy_advertiser_session_path, method: :delete, :class => 'navbar-link'  %>
-	<% else %>
-  		<%= link_to "Sign up", new_advertiser_registration_path, :class => 'navbar-link'  %> |
-  		<%= link_to "Login", new_advertiser_session_path, :class => 'navbar-link'  %>
-	<% end %>
-         </p>
-      </ul>
-    </div>
+ <div class="container-fluid">
+  <%= render "frameset/navbar_top" %>
+ </div>
+ <div class="container-fluid">
+  <div id="gg">
+   <%= render "frameset/navbar_left" %>
   </div>
-</nav>
-<div class="container">
+  <div id="hh">
   <%= yield %>
-  <footer>
-  <div class="container">
-    Rails Girls Taipei 2015
-  </div>
-</footer>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </div>
-
+ </div>
+ <%= render "frameset/footer" %>  
 </body>
 </html>
