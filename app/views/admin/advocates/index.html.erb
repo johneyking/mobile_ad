@@ -1,0 +1,7 @@
+
+<%= form_tag selected_admin_advocates_path do %>
+<%= select_tag(:option, options_for_select([['advocate_id', 'advocate_id'], ['name', "name"], ['email', 'email'], ['phone', 'phone'], ['account', 'account'], ['password','password'], ['ibeacon_id', 'ibeacon_id']] )) %>
+<%= text_field_tag "keyword" %>
+<%= submit_tag "seach" %>
+<% end %>
+

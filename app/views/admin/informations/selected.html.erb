@@ -1,0 +1,27 @@
+<table class="table">
+<%= @informations%>
+<tr>
+<th>name</th>
+<th>advertiser_id</th>
+<th>email</th>
+<th>phone</th>
+<th>account</th>
+<th>password</th>
+<th>count</th>
+</tr>
+<% @information.each do |information| %>
+<tr>
+
+<td><%= information.information_id %></td>
+<td><%= information.advertise_id %></td>
+
+
+ <th><%= link_to 'Edit', edit_admin_advertiser_path(information) %></th>
+ <th><%= button_to 'Delete', admin_advertiser_path(information), :method => :delete, :data => { :confirm => "Are you sure?" } %></th>
+</tr>
+<% end %>
+</table>
+
+
+
+ 

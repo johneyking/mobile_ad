@@ -1,0 +1,29 @@
+<table>
+<tr>
+<th>advertise_id</th>
+<th>advertiser_id</th>
+<th>title</th>
+<th>content</th>
+<th>start_date</th>
+<th>end_date</th>
+<th>location</th>
+</tr>
+<% @advertises.each do |advertise| %>
+<tr>
+<td><%= advertise.advertise_id %></td>
+<td><%= advertise.advertiser_id %></td>
+<td><%= advertise.title %></td>
+<td><%= advertise.content %></td>
+<td><%= advertise.start_date_time %></td>
+<td><%= advertise.end_date_time %></td>
+<td><%= advertise.location %></td>
+<th><%= link_to 'link',  :controller => 'advertises', :action => 'show', :id => advertise  %> </th>
+ <th><%= link_to 'Edit', edit_admin_advertise_path(advertise) %></th>
+ <th><%= button_to 'Delete', admin_advertise_path(advertise), :method => :delete, :data => { :confirm => "Are you sure?" } %></th>
+</tr>
+<% end %>
+</table>
+
+
+
+ 

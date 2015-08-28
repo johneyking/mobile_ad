@@ -1,0 +1,2 @@
+module AdvocateHelper
+end

@@ -1,0 +1,18 @@
+<%= form_for @advertisers, :url => { :controller => 'advertisers', :action => 'update', :id => @advertisers } do |f| %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :name, "Advertiser_id" %>
+    <%= f.text_field :advertiser_id %>
+     <%= f.label :name, "Email" %>
+    <%= f.text_field :email %>
+    <%= f.label :name, "phone" %>
+    <%= f.text_field :phone %>
+    <%= f.label :name, "Account" %>
+    <%= f.text_field :account %>
+    <%= f.label :name, "Password" %>
+    <%= f.text_field :password %>
+    <%= f.label :name, "Count" %>
+    <%= f.text_field :count %>
+    
+    <%= f.submit "Update" %>
+<% end %>

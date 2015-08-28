@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805085531) do
+ActiveRecord::Schema.define(version: 20150824075600) do
 
   create_table "advertisers", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -46,6 +46,44 @@ ActiveRecord::Schema.define(version: 20150805085531) do
     t.integer  "total_send",      limit: 4
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+  end
+
+  create_table "advocates", force: :cascade do |t|
+    t.integer  "advocate_id", limit: 4
+    t.string   "account",     limit: 255
+    t.string   "password",    limit: 255
+    t.string   "email",       limit: 255
+    t.string   "phone",       limit: 255
+    t.string   "ibeacon_id",  limit: 255
+    t.string   "name",        limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "information", force: :cascade do |t|
+    t.integer  "information_id", limit: 4
+    t.integer  "advertise_id",   limit: 4
+    t.integer  "event",          limit: 4
+    t.date     "event_date"
+    t.time     "event_time"
+    t.integer  "sequence",       limit: 4
+    t.string   "mac_address",    limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "message", limit: 255
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "task_id",      limit: 4
+    t.integer  "advocate_id",  limit: 4
+    t.integer  "advertise_id", limit: 4
+    t.integer  "send_number",  limit: 4
+    t.integer  "status",       limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

@@ -1,6 +1,38 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :advertisers do
+          collection do
+              post :selected
+          end
+    end
+    resources :advertises  do
+         collection do
+              post :selected           
+        end
+    end
+    resources :advocates  do
+         collection do
+              post :selected           
+        end
+    end
+    resources :tasks  do
+         collection do
+              post :selected           
+        end
+    end
+    resources :informations   do
+         collection do
+              post :selected           
+        end
+    end
+  end
   devise_for :advertisers
   resources :advertises
+
+  resources :advocates
+  resources :advertiseapis
+  resources :beaconapis
+
   root to: redirect('/advertises')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

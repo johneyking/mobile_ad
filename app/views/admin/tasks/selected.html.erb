@@ -1,0 +1,25 @@
+<table class="table">
+<tr>
+<th>name</th>
+<th>advertiser_id</th>
+<th>email</th>
+<th>phone</th>
+<th>account</th>
+<th>password</th>
+<th>count</th>
+</tr>
+<% @task.each do |task| %>
+<tr>
+
+<td><%= task.id %></td>
+
+
+ <th><%= link_to 'Edit', edit_admin_advertiser_path(task) %></th>
+ <th><%= button_to 'Delete', admin_advertiser_path(task), :method => :delete, :data => { :confirm => "Are you sure?" } %></th>
+</tr>
+<% end %>
+</table>
+
+
+
+ 

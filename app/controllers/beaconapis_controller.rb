@@ -1,0 +1,2 @@
+class BeaconapisController < ApplicationController
+end

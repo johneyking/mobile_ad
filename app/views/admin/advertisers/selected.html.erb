@@ -1,0 +1,25 @@
+<table class="table">
+<tr>
+<th>name</th>
+<th>advertiser_id</th>
+<th>email</th>
+<th>phone</th>
+<th>account</th>
+<th>password</th>
+<th>count</th>
+</tr>
+<% @advertisers.each do |advertiser| %>
+<tr>
+
+
+<td><%= advertiser.email %></td>
+
+ <th><%= link_to 'Edit', edit_admin_advertiser_path(advertiser) %></th>
+ <th><%= button_to 'Delete', admin_advertiser_path(advertiser), :method => :delete, :data => { :confirm => "Are you sure?" } %></th>
+</tr>
+<% end %>
+</table>
+
+
+
+ 

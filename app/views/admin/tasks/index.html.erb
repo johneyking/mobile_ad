@@ -1,0 +1,6 @@
+
+<%= form_tag selected_admin_tasks_path do %>
+<%= select_tag(:option, options_for_select([['task_id', 'task_id'], ['advertise_id', 'advertise_id'], ['advocate_id', "advocate_id"], ['send_number', 'send_number']] )) %>
+<%= text_field_tag "keyword" %>
+<%= submit_tag "seach" %>
+<% end %>

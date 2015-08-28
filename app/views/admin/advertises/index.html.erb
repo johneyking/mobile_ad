@@ -1,0 +1,7 @@
+
+<%= form_tag selected_admin_advertises_path do %>
+<%= select_tag(:option, options_for_select([['advertiser_id', 'advertiser_id'], ['advertise_id', "advertise_id"], ['title', 'title'], ['content', 'content'], ['start_date', 'start_date'], ['end_date','end_date'], ['location', 'location']] )) %>
+<%= text_field_tag "keyword" %>
+<%= submit_tag "seach" %>
+<% end %>
+
